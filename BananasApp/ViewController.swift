@@ -9,11 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var greenView: UIView!
+    
+    @IBOutlet weak var playButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
     }
 
-
+    override func viewDidLayoutSubviews() {
+        greenView.layer.cornerRadius = 20
+        greenView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        playButton.layer.cornerRadius = playButton.frame.height / 2
+        playButton.clipsToBounds = true
+    }
+    
 }
 
